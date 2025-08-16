@@ -1,0 +1,26 @@
+*   [33m080c90b[m[33m ([m[1;31morigin/main[m[33m)[m Merge pull request #4 from julianpelle/features
+[31m|[m[32m\[m  
+[31m|[m * [33md40bef0[m[33m ([m[1;36mHEAD -> [m[1;32mturnos[m[33m, [m[1;31morigin/features[m[33m, [m[1;32mfeatures[m[33m)[m Creacion clase turno
+[31m|[m * [33me88174c[m Clase Profesional creada
+[31m|[m * [33m2bab7cf[m Model del paciente creado
+* [32m|[m   [33m76b192c[m Merge pull request #3 from julianpelle/profesionales
+[33m|[m[34m\[m [32m\[m  
+[33m|[m * [32m|[m [33mfd8d89c[m[33m ([m[1;31morigin/profesionales[m[33m, [m[1;32mprofesionales[m[33m)[m Clase Profesional creada
+* [34m|[m [32m|[m   [33maf1f7e6[m Merge pull request #2 from julianpelle/paciente
+[35m|[m[36m\[m [34m\[m [32m\[m  
+* [36m\[m [34m\[m [32m\[m   [33mc3a7cc3[m Merge pull request #1 from julianpelle/develop
+[34m|[m[32m\[m [36m\[m [34m\[m [32m\[m  
+[34m|[m [32m|[m[34m_[m[36m|[m[34m/[m [32m/[m  
+[34m|[m[34m/[m[32m|[m [36m|[m [32m/[m   
+[34m|[m [32m|[m [36m|[m[32m/[m    
+[34m|[m [32m|[m[32m/[m[36m|[m     
+[34m|[m [32m|[m [36m|[m * [33mb5d34f0[m[33m ([m[1;32mpaciente[m[33m)[m Merge branch 'develop' into paciente
+[34m|[m [32m|[m [36m|[m[36m/[m[32m|[m 
+[34m|[m [32m|[m [36m|[m[32m/[m  
+[34m|[m [32m|[m[32m/[m[36m|[m   
+[34m|[m * [36m|[m [33m61c2c85[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m Packages creados
+[34m|[m[34m/[m [36m/[m  
+[34m|[m * [33m83945da[m[33m ([m[1;31morigin/paciente[m[33m)[m Model del paciente creado
+[34m|[m[34m/[m  
+* [33mbbb78fb[m[33m ([m[1;32mmain[m[33m)[m Creacion del proyecto
+* [33m8530120[m Initial commit
