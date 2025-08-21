@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface TurnoRepository extends JpaRepository<TurnoEntity, Long> {
 
-    List<TurnoEntity> findByDate(LocalDate date);
+    List<TurnoEntity> findByFecha(LocalDate fecha);
 
 }
