@@ -28,6 +28,11 @@ public class TurnoController {
         return this.turnoService.findByFecha(fecha);
     }
 
+    @GetMapping
+    public List<Turno> listarPorFechas(@RequestParam LocalDate desde, @RequestParam LocalDate hasta) {
+        return this.turnoService.listarPorFechas(desde,hasta);
+    }
+
     @PostMapping
     public Turno save(@RequestBody final Turno turno) {
         return this.turnoService.create(turno);
