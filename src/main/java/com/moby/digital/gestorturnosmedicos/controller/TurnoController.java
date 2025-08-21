@@ -19,18 +19,20 @@ public class TurnoController {
     }
 
     @GetMapping
-    public List<Turno> getAll() {
-        return this.turnoService.findAll();
+    public List<Turno> getAll(
+            @RequestParam(required = false) LocalDate desde,
+            @RequestParam(required = false) LocalDate hasta) {
+
+        if (desde != null && hasta != null) {
+            return turnoService.listarPorFechas(desde, hasta);
+        } else {
+            return turnoService.findAll();
+        }
     }
 
     @GetMapping("/fecha/{fecha}")
     public List<Turno> getByDate(@PathVariable final LocalDate fecha) {
         return this.turnoService.findByFecha(fecha);
-    }
-
-    @GetMapping
-    public List<Turno> listarPorFechas(@RequestParam LocalDate desde, @RequestParam LocalDate hasta) {
-        return this.turnoService.listarPorFechas(desde,hasta);
     }
 
     @PostMapping
