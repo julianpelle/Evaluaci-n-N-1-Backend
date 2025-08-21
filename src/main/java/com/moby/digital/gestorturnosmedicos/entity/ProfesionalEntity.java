@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "profesionales")
 @Getter
@@ -24,6 +26,9 @@ public class ProfesionalEntity {
 
     @NotBlank(message = "La especialidad no puede estar vacía")
     private String especialidad;
+
+    @OneToMany(mappedBy = "profesional")
+    private List<TurnoEntity> turnos;
 
     public ProfesionalEntity() {
     }
