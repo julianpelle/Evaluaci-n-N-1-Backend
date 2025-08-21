@@ -1,6 +1,8 @@
 package com.moby.digital.gestorturnosmedicos.service;
 
+import com.moby.digital.gestorturnosmedicos.entity.PacienteEntity;
 import com.moby.digital.gestorturnosmedicos.model.Paciente;
+import com.moby.digital.gestorturnosmedicos.model.mapper.PacienteMapper;
 import com.moby.digital.gestorturnosmedicos.repository.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,10 +12,12 @@ import java.util.List;
 @Service
 public class PacienteService {
     private final PacienteRepository pacienteRepository;
+    private final PacienteMapper mapper;
 
     @Autowired
     public PacienteService(PacienteRepository pacienteRepository) {
         this.pacienteRepository = pacienteRepository;
+        this.mapper = new PacienteMapper();
     }
 
 /*
@@ -25,8 +29,11 @@ public class PacienteService {
  */
 
     public List<Paciente> findAll() {
-        return pacienteRepository.findAll().stream().map(this::)
+        List<PacienteEntity> ListaEntidadPaciente = pacienteRepository.findAll();
+        return mapper.toModelList(ListaEntidadPaciente);
     }
+
+
 
 
 }
