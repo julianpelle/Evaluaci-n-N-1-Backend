@@ -26,4 +26,12 @@ public class ProfesionalMapper {
     public List<Profesional> toModelList(List<ProfesionalEntity> profesionalEntity) {
         return profesionalEntity.stream().map(this::toModel).toList();
     }
+
+    public ProfesionalEntity toEntity(Profesional profesional) {
+        ProfesionalEntity profesionalEntity = new ProfesionalEntity();
+        profesionalEntity.setNombre(profesional.getNombre());
+        profesionalEntity.setApellido(profesional.getApellido());
+        profesionalEntity.setEspecialidad(profesional.getEspecialidad());
+        return profesionalEntity;
+    }
 }
