@@ -2,6 +2,7 @@ package com.moby.digital.gestorturnosmedicos.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import java.util.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,6 +30,9 @@ public class PacienteEntity {
     @NotBlank(message = "El email no debe estar vacio")
     @Email(message = "El formato del email no es válido")
     private String email;
+
+    @OneToMany(mappedBy = "paciente")
+    private List<TurnoEntity> turnos;
 
     public PacienteEntity(Long id, String nombre, String apellido, String dni, String email) {
         this.id = id;
