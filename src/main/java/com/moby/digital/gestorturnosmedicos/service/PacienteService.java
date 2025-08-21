@@ -21,13 +21,6 @@ public class PacienteService {
         this.mapper = new PacienteMapper();
     }
 
-/*
-● POST /pacientes → Crear paciente
-● GET /pacientes/{id} → Obtener paciente por ID
-● GET /pacientes → Listar todos
-● DELETE /pacientes/{id} → Eliminar paciente
-
- */
 
     public List<Paciente> findAll() {
         List<PacienteEntity> ListaEntidadPaciente = pacienteRepository.findAll();
@@ -40,5 +33,14 @@ public class PacienteService {
                 .orElseThrow(() -> new RecursoNoEncontradoException("Paciente no encontrado: " + id));
     }
 
+    public Paciente createPaciente(Paciente paciente) {
+        return mapper.toModel(pacienteRepository.save(mapper.toEntity(paciente)));
+    }
+    public void eliminar(Long id) {
+        if (!pacienteRepository.existsById(id)) {
+            throw new RecursoNoEncontradoException("Paciente no encontrado");
+        }
+        pacienteRepository.deleteById(id);
+    }
 
 }
