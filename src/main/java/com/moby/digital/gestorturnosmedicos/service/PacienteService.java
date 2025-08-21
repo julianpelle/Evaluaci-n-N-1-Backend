@@ -1,6 +1,7 @@
 package com.moby.digital.gestorturnosmedicos.service;
 
 import com.moby.digital.gestorturnosmedicos.entity.PacienteEntity;
+import com.moby.digital.gestorturnosmedicos.exception.RecursoNoEncontradoException;
 import com.moby.digital.gestorturnosmedicos.model.Paciente;
 import com.moby.digital.gestorturnosmedicos.model.mapper.PacienteMapper;
 import com.moby.digital.gestorturnosmedicos.repository.PacienteRepository;
@@ -33,7 +34,11 @@ public class PacienteService {
         return mapper.toModelList(ListaEntidadPaciente);
     }
 
-
+    public Paciente findById(Long id) {
+        return pacienteRepository.findById(id)
+                .map(mapper::toModel)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Paciente no encontrado: " + id));
+    }
 
 
 }
