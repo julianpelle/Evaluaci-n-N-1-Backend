@@ -17,21 +17,15 @@ public class TurnoController {
     public TurnoController(final TurnoService turnoService) {
         this.turnoService = turnoService;
     }
-    /*
-● POST /turnos → Registrar turno (verifica que paciente y profesional
-            existan)
-● GET /turnos → Listar todos
-● GET /turnos/fecha/{fecha} → Listar turnos por fecha (formato
-                                                               yyyy-MM-dd)
-● DELETE /turnos/{id} → Eliminar turn*/
+
     @GetMapping
     public List<Turno> getAll() {
         return this.turnoService.findAll();
     }
 
-    @GetMapping("/fecha/{date}")
-    public List<Turno> getByDate(@PathVariable final LocalDate date) {
-        return this.turnoService.findByDate(date);
+    @GetMapping("/fecha/{fecha}")
+    public List<Turno> getByDate(@PathVariable final LocalDate fecha) {
+        return this.turnoService.findByFecha(fecha);
     }
 
     @PostMapping

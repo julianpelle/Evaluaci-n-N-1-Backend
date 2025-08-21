@@ -25,8 +25,8 @@ public class TurnoService {
         return mapper.toModelList(turnoRepository.findAll());
     }
 
-    public List<Turno> findByDate(LocalDate date){
-        return mapper.toModelList(turnoRepository.findByDate(date));
+    public List<Turno> findByFecha(LocalDate fecha){
+        return mapper.toModelList(turnoRepository.findByFecha(fecha));
     }
 
     public Turno create(Turno turno){
