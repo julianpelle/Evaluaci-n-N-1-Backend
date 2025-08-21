@@ -17,12 +17,12 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 public class PacienteDTO {
-    @Schema(description = "Identificador del user", example = "1", requiredMode = Schema.RequiredMode.REQUIRED)
+    @Schema(description = "Identificador del paciente", example = "1", requiredMode = Schema.RequiredMode.REQUIRED)
     @NotNull
     private Long id;
 
     @Schema(
-            description = "Nombre del usuario",
+            description = "Nombre del paciente",
             example = "Juan",
             requiredMode = Schema.RequiredMode.REQUIRED
     )
@@ -30,7 +30,7 @@ public class PacienteDTO {
     private String nombre;
 
     @Schema(
-            description = "Apellido del usuario",
+            description = "Apellido del paciente",
             example = "Pérez",
             requiredMode = Schema.RequiredMode.REQUIRED
     )
@@ -47,7 +47,7 @@ public class PacienteDTO {
     private String dni;
 
     @Schema(
-            description = "Correo electrónico del usuario",
+            description = "Correo electrónico del paciente",
             example = "juan.perez@mail.com",
             requiredMode = Schema.RequiredMode.REQUIRED
     )
