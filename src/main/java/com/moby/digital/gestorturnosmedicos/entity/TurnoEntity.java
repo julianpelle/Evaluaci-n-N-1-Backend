@@ -14,7 +14,6 @@ import java.time.LocalDate;
 public class TurnoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotNull(message = "El id no puede ser nulo")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

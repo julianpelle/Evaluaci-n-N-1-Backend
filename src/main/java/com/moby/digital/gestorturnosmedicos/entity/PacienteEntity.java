@@ -12,7 +12,6 @@ import lombok.Setter;
 public class PacienteEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotNull(message = "El id no puede ser nulo")
     private Long id;
 
     @NotBlank(message = "El Nombre no puede estar vacío")
