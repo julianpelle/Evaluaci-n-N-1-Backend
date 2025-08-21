@@ -10,5 +10,8 @@ public interface TurnoRepository extends JpaRepository<TurnoEntity, Long> {
 
     List<TurnoEntity> findByFecha(LocalDate fecha);
 
+    boolean existsByPacienteIdAndProfesionalIdAndFecha(Long pacienteId, Long profesionalId, LocalDate fecha);
+
     List<TurnoEntity> findByFechaBetween(LocalDate desde,LocalDate hasta);
+
 }
