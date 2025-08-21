@@ -39,9 +39,9 @@ public class TurnoMapper {
 
     public TurnoEntity toEntity(Turno turno) {
         TurnoEntity turnoEntity = new TurnoEntity();
-        turnoEntity.setId(turno.getId());
         turnoEntity.setPaciente(pacienteMapper.toEntity(turno.getPaciente()));
         turnoEntity.setProfesional(profesionalMapper.toEntity(turno.getProfesional()));
+        turnoEntity.setFecha(turno.getFecha());
         return turnoEntity;
     }
 

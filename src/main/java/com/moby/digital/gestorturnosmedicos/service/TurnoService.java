@@ -37,7 +37,9 @@ public class TurnoService {
         turnoRepository.deleteById(id);
     }
 
-
+    public List<Turno> listarPorFechas(LocalDate desde, LocalDate hasta){
+        return mapper.toModelList(turnoRepository.findByFechaBetween(desde,hasta));
+    }
 
 }
 

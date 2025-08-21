@@ -30,7 +30,6 @@ public class PacienteMapper {
 
     public PacienteEntity toEntity(Paciente paciente) {
         PacienteEntity pacienteEntity = new PacienteEntity();
-        pacienteEntity.setId(paciente.getId());
         pacienteEntity.setNombre(paciente.getNombre());
         pacienteEntity.setApellido(paciente.getApellido());
         pacienteEntity.setEmail(paciente.getEmail());
