@@ -5,21 +5,22 @@ import com.moby.digital.gestorturnosmedicos.entity.PacienteEntity;
 import com.moby.digital.gestorturnosmedicos.model.Paciente;
 
 public class PacienteMapper {
-    public PacienteEntity dtoToEntity(PacienteDTO pacienteDTO) {
-        PacienteEntity pacienteEntity = new PacienteEntity();
-        pacienteEntity.setId(pacienteDTO.getId());
-        pacienteEntity.setNombre(pacienteDTO.getNombre());
-        pacienteEntity.setApellido(pacienteDTO.getApellido());
-        pacienteEntity.setEmail(pacienteDTO.getEmail());
-        return pacienteEntity;
+    public Paciente toModel(PacienteDTO pacienteDTO) {
+        return new Paciente()
+             .dni(pacienteDTO.getDni())
+             .nombre(pacienteDTO.getNombre())
+             .apellido(pacienteDTO.getApellido())
+             .email(pacienteDTO.getEmail())
+             .id(pacienteDTO.getId());
     }
 
-    public Paciente EntityToPaciente(PacienteEntity pacienteEntity) {
-        Paciente paciente = new Paciente();
-        paciente.setId(pacienteEntity.getId());
-        paciente.setNombre(pacienteEntity.getNombre());
-        paciente.setApellido(pacienteEntity.getApellido());
-        paciente.setEmail(pacienteEntity.getEmail());
-        return paciente;
+    public Paciente toModel(PacienteEntity pacienteEntity) {
+        return new Paciente()
+        .id(pacienteEntity.getId())
+        .nombre(pacienteEntity.getNombre())
+        .apellido(pacienteEntity.getApellido())
+        .email(pacienteEntity.getEmail())
+        .id(pacienteEntity.getId());
+
     }
 }
