@@ -34,8 +34,10 @@ public class PacienteService {
     }
 
     public Paciente createPaciente(Paciente paciente) {
-        return mapper.toModel(pacienteRepository.save(mapper.toEntity(paciente)));
+        PacienteEntity p = mapper.toEntity(paciente);
+        return mapper.toModel(pacienteRepository.save(p));
     }
+
     public void eliminar(Long id) {
         if (!pacienteRepository.existsById(id)) {
             throw new RecursoNoEncontradoException("Paciente no encontrado");

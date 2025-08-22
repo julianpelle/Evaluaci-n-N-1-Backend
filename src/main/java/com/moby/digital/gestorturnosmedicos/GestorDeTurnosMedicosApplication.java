@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class GestorDeTurnosMedicosApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(GestorDeTurnosMedicosApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(GestorDeTurnosMedicosApplication.class, args);
+    }
 
 }

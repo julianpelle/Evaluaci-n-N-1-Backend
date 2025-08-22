@@ -1,7 +1,5 @@
 package com.moby.digital.gestorturnosmedicos.dto;
 
-import com.moby.digital.gestorturnosmedicos.model.Paciente;
-import com.moby.digital.gestorturnosmedicos.model.Profesional;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import lombok.EqualsAndHashCode;
@@ -11,7 +9,7 @@ import lombok.ToString;
 
 import java.time.LocalDate;
 
-@Schema(description = "Payload para la creación de un Turno")
+@Schema(description = "Payload para la creacion de un Turno")
 @Getter
 @Setter
 @EqualsAndHashCode

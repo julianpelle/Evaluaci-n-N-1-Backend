@@ -2,13 +2,16 @@ package com.moby.digital.gestorturnosmedicos.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+
 import java.util.*;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Table(name = "pacientes")
-@Getter@Setter
+@Getter
+@Setter
 public class PacienteEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,17 +20,17 @@ public class PacienteEntity {
     @NotBlank(message = "El Nombre no puede estar vacío")
     private String nombre;
 
-    @NotBlank(message = "El apellido no puede estar vacío")
+    @NotBlank(message = "El apellido no puede estar vacio")
     private String apellido;
 
     @Column(unique = true)
     @NotBlank(message = "El DNI es obligatorio")
-    @Size(min = 7, max = 8, message = "El DNI debe tener entre 7 y 8 dígitos")
+    @Size(min = 7, max = 8, message = "El DNI debe tener entre 7 y 8 digitos")
     private String dni;
 
     @Column(unique = true)
     @NotBlank(message = "El email no debe estar vacio")
-    @Email(message = "El formato del email no es válido")
+    @Email(message = "El formato del email no es valido")
     private String email;
 
     @OneToMany(mappedBy = "paciente")
@@ -41,5 +44,6 @@ public class PacienteEntity {
         this.email = email;
     }
 
-    public PacienteEntity() {}
+    public PacienteEntity() {
+    }
 }

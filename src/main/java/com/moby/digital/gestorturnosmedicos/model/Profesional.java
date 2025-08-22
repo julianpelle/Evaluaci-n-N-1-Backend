@@ -4,7 +4,9 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter@Setter@EqualsAndHashCode
+@Getter
+@Setter
+@EqualsAndHashCode
 public class Profesional {
     private Long id;
     private String nombre;
@@ -25,14 +27,17 @@ public class Profesional {
         this.id = id;
         return this;
     }
+
     public Profesional NombreProfesional(String nombre) {
         this.nombre = nombre;
         return this;
     }
+
     public Profesional ApellidoProfesional(String apellido) {
         this.apellido = apellido;
         return this;
     }
+
     public Profesional EspecialidadProfesional(String especialidad) {
         this.especialidad = especialidad;
         return this;
