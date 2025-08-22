@@ -10,10 +10,12 @@ import com.moby.digital.gestorturnosmedicos.model.Turno;
 
 import java.util.List;
 
+
 public class TurnoMapper {
 
     private final PacienteMapper pacienteMapper = new PacienteMapper();
     private final ProfesionalMapper profesionalMapper = new ProfesionalMapper();
+
 
     public Turno toModel(TurnoDTO dto) {
         PacienteDTO p = dto.getPaciente();
@@ -39,8 +41,6 @@ public class TurnoMapper {
 
     public TurnoEntity toEntity(Turno turno) {
         TurnoEntity turnoEntity = new TurnoEntity();
-        turnoEntity.setPaciente(pacienteMapper.toEntity(turno.getPaciente()));
-        turnoEntity.setProfesional(profesionalMapper.toEntity(turno.getProfesional()));
         turnoEntity.setFecha(turno.getFecha());
         return turnoEntity;
     }

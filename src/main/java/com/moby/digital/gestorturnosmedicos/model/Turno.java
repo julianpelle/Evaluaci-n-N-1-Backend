@@ -6,7 +6,9 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
-@Getter@Setter@EqualsAndHashCode
+@Getter
+@Setter
+@EqualsAndHashCode
 public class Turno {
     private Long id;
     private Paciente paciente;
@@ -27,14 +29,17 @@ public class Turno {
         this.setId(id);
         return this;
     }
+
     public Turno paciente(Paciente paciente) {
         this.setPaciente(paciente);
         return this;
     }
+
     public Turno professional(Profesional profesional) {
         this.setProfesional(profesional);
         return this;
     }
+
     public Turno fecha(LocalDate fecha) {
         this.setFecha(fecha);
         return this;

@@ -5,7 +5,10 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter@Setter@EqualsAndHashCode@ToString
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 public class Paciente {
     private Long id;
     private String nombre;
@@ -28,18 +31,22 @@ public class Paciente {
         this.id = id;
         return this;
     }
+
     public Paciente nombre(String nombre) {
         this.nombre = nombre;
         return this;
     }
+
     public Paciente apellido(String apellido) {
         this.apellido = apellido;
         return this;
     }
+
     public Paciente dni(String dni) {
         this.dni = dni;
         return this;
     }
+
     public Paciente email(String email) {
         this.email = email;
         return this;

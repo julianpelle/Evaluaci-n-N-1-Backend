@@ -11,7 +11,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Schema(description = "Payload para la creación de un Paciente")
+@Schema(description = "Payload para la creacion de un Paciente")
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -26,15 +26,15 @@ public class PacienteDTO {
             example = "Juan",
             requiredMode = Schema.RequiredMode.REQUIRED
     )
-    @NotBlank(message = "El Nombre no puede estar vacío")
+    @NotBlank(message = "El Nombre no puede estar vacio")
     private String nombre;
 
     @Schema(
             description = "Apellido del paciente",
-            example = "Pérez",
+            example = "Perez",
             requiredMode = Schema.RequiredMode.REQUIRED
     )
-    @NotBlank(message = "El apellido no puede estar vacío")
+    @NotBlank(message = "El apellido no puede estar vacio")
     private String apellido;
 
     @Schema(
@@ -47,12 +47,12 @@ public class PacienteDTO {
     private String dni;
 
     @Schema(
-            description = "Correo electrónico del paciente",
+            description = "Correo electronico del paciente",
             example = "juan.perez@mail.com",
             requiredMode = Schema.RequiredMode.REQUIRED
     )
-    @NotBlank(message = "El email no debe estar vacío")
-    @Email(message = "El formato del email no es válido")
+    @NotBlank(message = "El email no debe estar vacio")
+    @Email(message = "El formato del email no es valido")
     private String email;
 
 

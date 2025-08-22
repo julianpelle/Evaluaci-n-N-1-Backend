@@ -19,8 +19,8 @@ public class TestCargaInicial {
     private final TurnoRepository turnoRepository;
 
     public TestCargaInicial(PacienteRepository pacienteRepository,
-                           ProfesionalRepository profesionalRepository,
-                           TurnoRepository turnoRepository) {
+                            ProfesionalRepository profesionalRepository,
+                            TurnoRepository turnoRepository) {
         this.pacienteRepository = pacienteRepository;
         this.profesionalRepository = profesionalRepository;
         this.turnoRepository = turnoRepository;
@@ -32,15 +32,15 @@ public class TestCargaInicial {
         PacienteEntity pac1 = new PacienteEntity();
 
         pac1.setNombre("Juan");
-        pac1.setApellido("Pérez");
+        pac1.setApellido("Doe");
         pac1.setDni("30123456");
-        pac1.setEmail("juan.perez@example.com");
+        pac1.setEmail("juan.doe@example.com");
         pacienteRepository.save(pac1);
 
         PacienteEntity pac2 = new PacienteEntity();
 
-        pac2.setNombre("María");
-        pac2.setApellido("Gómez");
+        pac2.setNombre("Maria");
+        pac2.setApellido("Gomez");
         pac2.setDni("32123456");
         pac2.setEmail("maria.gomez@example.com");
         pacienteRepository.save(pac2);
@@ -49,15 +49,15 @@ public class TestCargaInicial {
         ProfesionalEntity profClinica = new ProfesionalEntity();
 
         profClinica.setNombre("Ana");
-        profClinica.setApellido("López");
-        profClinica.setEspecialidad("Clínica");
+        profClinica.setApellido("Lopez");
+        profClinica.setEspecialidad("oftalmologia");
         profesionalRepository.save(profClinica);
 
         ProfesionalEntity profOdonto = new ProfesionalEntity();
 
         profOdonto.setNombre("Carlos");
         profOdonto.setApellido("Molina");
-        profOdonto.setEspecialidad("Odontología");
+        profOdonto.setEspecialidad("odontologia");
         profesionalRepository.save(profOdonto);
 
         // Turnos (3 mínimos)
@@ -85,4 +85,9 @@ public class TestCargaInicial {
         t3.setFecha(d1);
         turnoRepository.save(t3);
     }
+
+    /*
+    Decirme si es recomendable cargarlos por el service simulando el funcionamiento del controller
+    lo hice asi mas q nada por el manejo de los retornos del service
+     */
 }

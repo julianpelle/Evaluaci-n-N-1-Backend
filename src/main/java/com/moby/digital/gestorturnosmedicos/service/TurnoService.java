@@ -26,7 +26,7 @@ public class TurnoService {
     private final TurnoMapper mapper;
 
     @Autowired
-    public TurnoService(TurnoRepository turnoRepository,PacienteRepository pacienteRepository, ProfesionalRepository profesionalRepository) {
+    public TurnoService(TurnoRepository turnoRepository, PacienteRepository pacienteRepository, ProfesionalRepository profesionalRepository) {
         this.turnoRepository = turnoRepository;
         this.pacienteRepository = pacienteRepository;
         this.profesionalRepository = profesionalRepository;
@@ -44,17 +44,15 @@ public class TurnoService {
 
     public Turno create(Turno turno) {
         if (!pacienteRepository.existsById(turno.getPaciente().getId())) {
-            throw new PacienteNoEncontradoException("No se encuentra el paciente " +
-                    turno.getPaciente().getNombre() + " " +
-                    turno.getPaciente().getApellido() + " en nuestra base de datos");
+            throw new PacienteNoEncontradoException("No se encuentra el paciente con el id: " +
+                    turno.getPaciente().getId() + " en nuestra base de datos");
         }
         if (!profesionalRepository.existsById(turno.getProfesional().getId())) {
-            throw new ProfesionalNoEncontradoException("No se encuentra el paciente " +
-                    turno.getProfesional().getNombre() + " " +
-                    turno.getProfesional().getApellido() + " en nuestra base de datos");
+            throw new ProfesionalNoEncontradoException("No se encuentra el profesional con el id: " +
+                    turno.getProfesional().getId() + " en nuestra base de datos");
         }
 
-        if(turnoRepository.existsByPacienteIdAndProfesionalIdAndFecha(turno.getPaciente().getId(), turno.getProfesional().getId(), turno.getFecha())){
+        if (turnoRepository.existsByPacienteIdAndProfesionalIdAndFecha(turno.getPaciente().getId(), turno.getProfesional().getId(), turno.getFecha())) {
             throw new TurnoDuplicadoException("Ya existe un turno asignado para este paciente, con este mismo profesional para la misma fecha");
         }
 
@@ -69,7 +67,8 @@ public class TurnoService {
         // excepciones, que creo que no seria lo ideal
 
         TurnoEntity t = mapper.toEntity(turno);
-
+        t.setPaciente(pacienteRepository.getReferenceById(turno.getPaciente().getId()));
+        t.setProfesional(profesionalRepository.getReferenceById(turno.getProfesional().getId()));
         return mapper.toModel(turnoRepository.save(t));
 
     }
@@ -78,8 +77,8 @@ public class TurnoService {
         turnoRepository.deleteById(id);
     }
 
-    public List<Turno> listarPorFechas(LocalDate desde, LocalDate hasta){
-        return mapper.toModelList(turnoRepository.findByFechaBetween(desde,hasta));
+    public List<Turno> listarPorFechas(LocalDate desde, LocalDate hasta) {
+        return mapper.toModelList(turnoRepository.findByFechaBetween(desde, hasta));
     }
 
 }

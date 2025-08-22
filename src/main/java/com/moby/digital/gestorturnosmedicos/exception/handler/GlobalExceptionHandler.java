@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class GlobalExceptionHandler {
 
 
-
     @ExceptionHandler(RecursoNoEncontradoException.class)
     @ApiResponse(
             responseCode = "404",
@@ -66,17 +65,16 @@ public class GlobalExceptionHandler {
             )
     )
     public ResponseEntity<String> handleTurnoDuplicado(TurnoDuplicadoException ex) {
-        return  ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
     }
     // 409 Conflict
     // Esta respuesta puede ser enviada cuando una petición tiene conflicto con el estado actual del servidor.
 
 
-
     @ExceptionHandler(FechaInvalidaException.class)
     @ApiResponse(
             responseCode = "400",
-            description = "Error de validación: fecha invalida",
+            description = "Error: fecha invalida",
             content = @Content(
                     schema = @Schema(implementation = String.class),
                     examples = @ExampleObject(value = "La fecha del turno debe ser hoy o posterior")

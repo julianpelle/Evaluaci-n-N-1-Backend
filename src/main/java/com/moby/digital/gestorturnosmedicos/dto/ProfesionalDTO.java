@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Schema(description = "Payload para la creación de un Profesional")
+@Schema(description = "Payload para la creacion de un Profesional")
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -23,15 +23,15 @@ public class ProfesionalDTO {
             example = "Juan",
             requiredMode = Schema.RequiredMode.REQUIRED
     )
-    @NotBlank(message = "El Nombre no puede estar vacío")
+    @NotBlank(message = "El Nombre no puede estar vacio")
     private String nombre;
 
     @Schema(
             description = "Apellido del profesional",
-            example = "Pérez",
+            example = "Doe",
             requiredMode = Schema.RequiredMode.REQUIRED
     )
-    @NotBlank(message = "El apellido no puede estar vacío")
+    @NotBlank(message = "El apellido no puede estar vacio")
     private String apellido;
 
     @Schema(
@@ -39,7 +39,7 @@ public class ProfesionalDTO {
             example = "Cardiologo",
             requiredMode = Schema.RequiredMode.REQUIRED
     )
-    @NotBlank(message = "La especialidad no puede estar vacío")
+    @NotBlank(message = "La especialidad no puede estar vacio")
     private String especialidad;
 
 }
